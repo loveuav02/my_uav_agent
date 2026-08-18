@@ -64,7 +64,7 @@
 是参考开源项目自主编写的无人机python-api控制实验代码。
 
 
-### my_airsim_basic/
+### my_airsim_Prompt/
 
 是参考开源项目自主编写的无人机Prompt控制实验代码。
 
