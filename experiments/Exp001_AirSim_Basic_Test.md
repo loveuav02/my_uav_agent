@@ -69,7 +69,7 @@ loveuav02
 ## Step 2：运行控制程序
 
 
-airsim—_basic.ipynb 
+airsim_basic.ipynb 
 
 
 ## Step 3：记录实验结果
