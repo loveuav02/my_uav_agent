@@ -47,26 +47,31 @@ loveuav02
 启动PromptCraft-Robotics场景。
 
 
-## Step 2：编写无人机sdk封装文件（微软开源项目已提供）
+## Step 2：改写无人机sdk封装文件（微软开源项目已提供，稍加改动，增加多模态大模型doubao-seed-2-1-turbo-260628和目标检测大模型Grounding-DINO）
 
 
-LLM_sdk.py
+引入look()函数利用doubao-seed-2-1-turbo-260628进行图片理解，识别图片中的物体。
+
+
+引入detect()函数利用Grounding-DINO进行静态目标检测并完成静态目标追踪。
+
+
 airsim_wrapper.py
 
 
-## Step 3：编写LLM的openai sdk文件
+## Step 3：Prompt工程
 
 
-LLM_sdk.py
+编写kg_prompt_cn.txt，增加视觉感知相关提示词 
 
 
-## Step 4：Prompt工程
+## Step 3：编写主函数
 
 
-kg_prompt_cn.txt and system_prompt_cn.txt
+airsim_Vision.ipynb
 
 
-## Step 5：记录实验数据
+## Step 4：记录实验数据
 
 
 详见demo文件夹下的MP4视频
@@ -75,7 +80,10 @@ kg_prompt_cn.txt and system_prompt_cn.txt
 # 4.实验思考
 
 
-如何让无人机根据自然语言指令直接生成控制指令：
+无人机根据自然语言指令进行环境感知：
+
+
+1.多模态理解
 
 
 用户自然语言指令
@@ -86,25 +94,60 @@ LLM
 
 ↓
 
-Agent
+Camera
 
 ↓
 
-调用AirSim API
+Image
+
+↓
+
+VLM
+
+↓
+
+Scene Understanding
+
+
+2.目标检测与基于目标的动作执行
+
+
+用户自然语言指令
+
+↓
+
+LLM
+
+↓
+
+Camera
+
+↓
+
+Detection Model
+
+↓
+
+Object Class
+
++
+
+Bounding Box
+
+↓
+
+控制无人机行动
+
 
 
 当前控制方式的问题：
 
-1.需要人工进行提示词工程，缺少泛化能力
+1.视觉感知与任务理解割裂，缺少高层任务理解，目前仍属于感知驱动控制，而不是任务驱动智能体
 
-2.Prompt工程中的知识库若知识数量太多，会使推理变慢，成本增加
-
-3.任务理解能力差，无法理解复杂指令，需要用户进行实时指示
-
-4.缺少感知能力，物体检测完全依据仿真环境提供的坐标，但现实中坐标未知
+2.缺少复杂环境理解能力，当前视觉感知缺少对场景的理解能力，比如哪个目标最近，哪个目标符合任务要求，是否有障碍物
 
 
 # 5.未来实验思路
 
 
-尝试引入多模态LLM进行任务控制，解决当前控制方式缺少感知能力的问题
+尝试引入agent加入到无人机控制架构中，提升无人机对高层任务的理解能力
