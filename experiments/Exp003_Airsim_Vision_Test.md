@@ -65,13 +65,13 @@ airsim_wrapper.py
 编写kg_prompt_cn.txt，增加视觉感知相关提示词 
 
 
-## Step 3：编写主函数
+## Step 4：编写主函数
 
 
 airsim_Vision.ipynb
 
 
-## Step 4：记录实验数据
+## Step 5：记录实验数据
 
 
 详见demo文件夹下的MP4视频
