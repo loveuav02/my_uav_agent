@@ -30,8 +30,8 @@ objects_dict = {
     "tower3": "SM_Electric_trellis_8",
 }
 
-api_key="ark-1b81f729-3dfe-4415-a9de-4276ae123455-eeaa9" #使用自己的key，火山方舟
-gdino_token = "a0dc2e16702b78cc9ea6c7cefe8cddad" #使用自己的token，dino 
+api_key=" " #使用自己的key，火山方舟
+gdino_token = " " #使用自己的token，dino 
 
 #AirSimWrapper
 client = airsim.MultirotorClient()#run in some machine of airsim,otherwise,set ip="" of airsim
