@@ -233,7 +233,10 @@ Agent
 
 ---
 
-# 🎥 演示视频：<img src="demo/demo1.gif" width="800">
+# 🎥 演示视频：
+<p align="center">
+  <img src="demo/demo1.gif" width="800" alt="Demo">
+</p>
 
 
 # 致谢
