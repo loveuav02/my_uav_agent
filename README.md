@@ -233,7 +233,7 @@ Agent
 
 ---
 
-🎥 演示视频：[https://www.bilibili.com/video/BV1tb4k6qERw/?spm_id_from=333.1387.homepage.video_card.click&vd_source=15c0f0127db755ea4381befc37ac30c1]
+# 🎥 演示视频：<img src="demo/demo1.gif" width="800">
 
 
 # 致谢
