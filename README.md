@@ -239,6 +239,10 @@ Agent
 </p>
 
 
+<p align="center">
+  <img src="demo/demo2.gif" width="800" alt="Demo">
+</p>
+
 # 致谢
 
 本仓库主要用于个人学习、实验与科研探索。
